@@ -53,9 +53,16 @@ Basic Data types in python
     tuple_one = 1,2,3,4
     tuple_two = "Five", "Six", "Seven", "Eight"
     ocombined_tuple = (tuple_one,tuple_two)     => gives : ((1, 2, 3, 4), ('Five', 'Six', 'Seven', 'Eight'))
+    list_to_tuple = tuple([1,2,3,4,5,6,7])      => gives : (1, 2, 3, 4, 5, 6, 7)
     
 
-5]   
+5] set:
+
+6] dict:
+
+7] bool:
+
+8] None:
     
     
 """
