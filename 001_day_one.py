@@ -57,14 +57,22 @@ Basic Data types in python
     
 
 5] set:
+    Creating set:
+        set_num = set()   =>using set class
+        set_nums = {1,2,3,4,4,5,5,6,7,8,8,8} => {1, 2, 3, 4, 5, 6, 7, 8}
+        myset = set(["a", "b", "c"])         =>converts list to sets  {'c', 'b', 'a'}
 
 6] dict:
+    Creating dict:
+        my_dict = {}     =>creates an empty dict :=> {}
+        my_dict = dict() => Creates an empty dict using dict class :> 
+        
 
 7] bool:
 
 8] None:
+
+9] float
     
     
 """
-list_to_tuple = tuple([1,2,3,4,5,6,7])
-print(list_to_tuple)
