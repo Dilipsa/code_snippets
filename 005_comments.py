@@ -27,3 +27,20 @@ Why are Comments Used in Python?
   Sharing code with fellow developers
   Collaborating with multiple people.
 """
+
+# name = "Dilip Sapkota"
+# greet = "Good Morning"
+
+# print(f"Hi {name} {greet}, How are you?")
+
+
+# print("Good morning")
+# print("Good morning")
+# print("Good morning")
+# print("Good morning")
+print("Good Afternoon")
+
+# To Check Docstring in a module
+import random
+print(random.randint.__doc__) 
+# Output: `Return random integer in range [a, b], including both end points.``
