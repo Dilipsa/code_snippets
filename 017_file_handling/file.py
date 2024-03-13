@@ -62,7 +62,8 @@ which is more efficient and safer.
 with open("dilip.txt", "r") as file:
     content = file.read()
     print(content)
-# File is automatically closed at the end of the block
+# File is
+#  automatically closed at the end of the block
 
 
 Error Handling
@@ -125,7 +126,7 @@ with open("dilip.txt", "r") as f:
     file_contents = f.read(size_to_read)
 
 
-# To see corrent position
+# To see current position
 with open("dilip.txt", "r") as f:
   size_to_read = 10
   file_contents = f.read(size_to_read)

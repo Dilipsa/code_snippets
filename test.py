@@ -1,193 +1,63 @@
-"""num = 10
-if num == 10:
-  print("this is 10")
-elif num == 20:
-  print("this is 20")
-elif num == 30:
-  print("this is 30")
-else:
-  print("something else")
+"""
+4 pillars of OOPS
+=================
+1] Abstraction
+2] Encapsulation
+3] Inheritance
+4] polymerphysm
 
-if num == 10:
-  print("this is 10")
-if num == 20:
-  print("this is 20")
-
-
-if num == 30:
-  print("this is 30")
-else:
-  print("something else")
-
-# Some common scenario
-name = "Dilip"
-name = None
-name = "None"
-name = ""
-name = 0
-name = -1
-name = "0"
-name = int("0")
-
-if name:
-  print("If part")
-else:
-  print("Else part")
-print(not name)
-print(name is None)
-print(name is not None)
-
-
-'''Ternary operator or single line if else statement'''
-
-print("If part" if name else "Else part")
-
-num = [10,20,30]
-print("30 available in the list" if 30 in num else "30 is not available in the list")
-
-print(30 not in num)
-
-'''understand the difference between `==` and `is` '''
-a = 20
-b = 20
-
-print(a==b)
-print(a is b)
-print(f" id of {a} is {id(a)}")
-print(f" id of {b} is {id(b)}")
-
-l1 = [1,2,3]
-l2 = [1,2,3]
-
-print(l1 == l2)
-print(l1 is l2)
-print(f" id of {l1} is {id(l1)}")
-print(f" id of {l2} is {id(l2)}")
-
-'''simple example of for else loop'''
-for i in range(1,11):
-  if i == 5:
-    continue
-  print(i)
-else:
-  print("I am executed")
-
-
-lis = [1,2,3,4,5,6,7,8,9,10]
-even_lis = []
-
-for l in lis:
-  if l%2 == 0:
-    even_lis.append(l)
-  print(even_lis)
-    
-# functions
-def get_info(*args, **kwargs):
-  sum = 0
-  for i in args:
-    sum = sum+i
-  print(sum)
-  for key, value in kwargs.items():
-    print(key, value)
-
-dic = {'num1':10, 'num2':20, 'num3':40}
-tup = [10, 20, 30, 40]
-get_info(*tup, **dic) 
-
-'''lambda functions'''
-# defined function / named function / normal function
-def square(n):
-  return n**2
-
-# lambda function / ananomous function / nameless function
-l = lambda n:n**2
-print(l(6))
-
-# map(), filter() and reduce() functions with lambda
-print(list(map(lambda n:"vandana", (1,2,3,4,5))))
-[1, 4, 9, 16, 25]
-
-even_no = list(map(lambda x :x**2==0, [0, 1,2,3,4,5,6,7,8,10]))
-print(even_no)
-
-from functools import reduce
-sum = reduce(lambda x,y:x+y, [1,2,3,4,5,6])
-print(sum)
-
-#  without reduce function
-sum = 0
-def find_sum(*args):
-  global sum
-  for i in args:
-    sum = sum+i
-find_sum(1,2,3,4,5,6)
-print(sum)
-
-# list comprehension
-
-l = [1,2,3,4,5,6,7,8,9,10]
-print([i for i in l if i<5]) # list comprehension
-
-#  using for loop
-even_no = []
-for i in l:
-  if i%2==0:
-    even_no.append(i)
-print(even_no)
 """
 
+class Employee(object):
+  company_name = "XYZ Company"
+  no_of_employee = 0
+  increment = 5
 
-# def decorator(grt):
-#   def inner(*args, **kwargs):
-#     result = grt(*args, **kwargs)
-#     num3 = int(input("Enter a number to add from decorator:\n"))
-#     return result + num3
-#   return inner
+  def __init__(self, first_n, last_n, emp_id, mobile_no, emp_email, emp_salary, emp_city, emp_state, emp_country):
+    self.first_name = first_n
+    self.last_name = last_n
+    self.employee_id = emp_id
+    self.mobile = mobile_no
+    self.email = emp_email
+    self.salary = emp_salary
+    self.city = emp_city
+    self.state = emp_state
+    self.country = emp_country
+    Employee.no_of_employee += 1
 
-# @decorator
-# def add_num(num1, num2):
-#   return num1+num2
-# print(add_num(20,30))
+  @property
+  def name(self):
+    return f"{self.first_name} {self.last_name}"
 
+  def get_address(self):   # Instance method
+    return f"city is {self.city}, state is {self.state} and country is {self.country}"
+  
+  def get_contact_info(self):
+    return f"Mobile no is {self.mobile} and Email is {self.email}"
+  
+  def get_detail(self):
+    return self.name, self.get_address(), self.get_contact_info()
+  
+  @classmethod
+  def get_No_of_employee(cls):
+    return cls.no_of_employee
+  
+  @staticmethod
+  def static_method():
+    return ("I am static method")
+  
+  @classmethod
+  def set_increment(cls, inc_val):
+    cls.increment = inc_val
 
-# def decorator(func):
-#   def inner(*args):
-#     result = func(*args)
-#     length = len(args)
-#     avg = result / length
-#     print(result)
-#     return avg
-#   return inner
+  def __str__(self):
+    return self.first_name
 
-# @decorator
-# def find_sum(num1, num2):
-#   return num1+num2
-# print(find_sum(10,20))
-
-# def add_nums(*args):
-#   from functools import reduce
-#   print(reduce(lambda x,y:x+y, args))
-#   # print(num1+num2)
-
-# add_nums(10,20)
-
-# create a function which returns the sum of 
-# numbers without using sum(), use *args
-# numbers = (1,2,3,5)
-# for num in numbers:
-#   num+=num
-# print(num)
-
-# try:
-#   num_one = 10 #int(input("Enter your first number:"))
-#   num_two = '0' #int(input("Enter your second number:"))
-#   print(num_one / num_two)
-
-# except ZeroDivisionError as e:
-#   print("I am inside Except block", e)    # This will be executed when an exception occured in try block
-# except FileNotFoundError as e:
-#   print(e)
-# else:
-#   print("I will be executed if there is no exception occured")      # This will be executed if try block executed successfully
-# finally:
-#   print("I will be executed any time whether any exception occurs or not.")
+shiva = Employee("Shiva" ,"Kumar", "001", 888888888, "shivs@gmail.com", 10000, "Bangalore", "Karnataka", "India")
+print(shiva.get_address())
+print(shiva.company_name)
+print(shiva.get_detail())
+print(Employee.get_No_of_employee())
+print(Employee.set_increment(10))
+print(Employee.increment)
+print(Employee.static_method())

@@ -117,15 +117,26 @@ finally:
     print("Cleanup code executed")
 
 
-
-
+# Example for handling multiplle Exceptions
 try:
-    num = int(input("Enter a number:"))
-    num2_input = input("Enter a number:")
-    try:
-        num2 = int(num2_input)
-        print(num / num2)
-    except ValueError:
-        print("Please enter a valid number.")
+    num_one = int(input("Enter your first number:"))
+    num_two = int(input("Enter your second number:"))
+    print(num_one / num_two)
+
 except ZeroDivisionError as e:
-    print("Error:", e)
+    print("Division by zero error:", e)
+
+except TypeError as e:
+    print("Type error occurred:", e)
+
+except ValueError as e:
+    print("Value error occurred:", e)
+
+except Exception as e:
+    print("An unexpected error occurred:", e)
+
+else:
+    print("No exception occurred")
+
+finally:
+    print("Finally block will be executed regardless of exceptions")
