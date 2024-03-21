@@ -1,63 +1,172 @@
 """
-4 pillars of OOPS
-=================
-1] Abstraction
-2] Encapsulation
-3] Inheritance
-4] polymerphysm
+class BankAccount:
+  bank_name = "ABC Bank"
+  __rate_of_interest = 1.5
+  def __init__(self, name, balance):
+    self.name=name
+    self.__balance=balance
+
+  def set_balance(self, amt):
+    self.__balance = amt
+  
+  def get_balance(self):
+    return f"balance from get_balance(): {self.__balance} rupees."
+  
+  def get_interest(self):
+    return f"Interest from get_interest(): {self.__get_rate_of_interest()}"
+  
+  def __get_rate_of_interest(self):
+    return BankAccount.__rate_of_interest
+  
+
+obj = BankAccount("Melvin", 10000)
+# print(obj._BankAccount__balance) # mangling
+
+obj.__balance=20
+obj.set_balance(5000)
+print(obj.get_balance())
+print(obj.get_interest())
+print(f"balance variable from object {obj.__balance}rupees.")
+"""
+# def simple_gen(n):
+#   for i in range(n):
+#     yield i
+
+
+# create a generator and function to generate a even number
+# def enve_number_generator(n):
+#   for i in range(n):
+#     if i%2==0:
+#       yield i
+  
+# even_no = []
+# def even_number(n):
+#   for i in range(n):
+#     if i%2==0:
+#       even_no.append(i)
+#   return even_no
+# import sys
+# n = 1000000
+# print(sys.getsizeof(enve_number_generator(n)))
+# print(sys.getsizeof(even_number(n)))
+
+
+
+
+
+
+# class A:
+#   def greet(self,  *args):
+#     print(sum(args))
+
+# class B(A):
+#   def greet(self,  *args):
+#     print(sum(args))
+
+# class C(B):
+#   def greet(self, *args):
+#     print(sum(args))
+#   pass
+# obj1 = C()
+# obj1.greet(10,20,30)
+
 
 """
+The ability to behave more than one form is called polymorphysm.
+method overriding is an example of polymorphysm.
+"""
 
-class Employee(object):
-  company_name = "XYZ Company"
-  no_of_employee = 0
-  increment = 5
+"""
+Hiding the implementation details and showing the essential features
+"""
 
-  def __init__(self, first_n, last_n, emp_id, mobile_no, emp_email, emp_salary, emp_city, emp_state, emp_country):
-    self.first_name = first_n
-    self.last_name = last_n
-    self.employee_id = emp_id
-    self.mobile = mobile_no
-    self.email = emp_email
-    self.salary = emp_salary
-    self.city = emp_city
-    self.state = emp_state
-    self.country = emp_country
-    Employee.no_of_employee += 1
+# from abc import abstractmethod, ABC
+# class A(ABC):
+#   @abstractmethod
+#   def greet(self):
+#     pass
 
-  @property
-  def name(self):
-    return f"{self.first_name} {self.last_name}"
+#   @abstractmethod
+#   def print_hello(self):
+#     pass
 
-  def get_address(self):   # Instance method
-    return f"city is {self.city}, state is {self.state} and country is {self.country}"
+#   def print_hi(self):
+#     print("Hiiiiiiiiiiiiii")
+
+# class B(A):
+#   def greet(self):
+#     print("good morning")
+
+# obj = B()
+# obj.greet()
+
+"""
+Abstract class is a class which has atleast one abstract method. all abstract methods 
+should be implemented in sub class.
+"""
+
+
+
+
+
+
+# Generator
+def generator_even_no(n):
+  for i in range(n):
+    if i%2==0:
+      yield i
+
+even_no = []
+def get_even_no(n):
+  for i in range(n):
+    if i%2==0:
+      even_no.append(i)
+  return even_no
+
+
+number = 1000000
+even_gen = generator_even_no(number)
+even = get_even_no(number)
+
+import sys
+print("using generator consumed memory in mb", sys.getsizeof(even_gen))
+print("with out generator",sys.getsizeof(even))
+
+
+class MyIterator:
+  def __init__(self, max_value):
+    self.max_value = max_value
+    self.current = 0
+
+  def __iter__(self):
+    return self
   
-  def get_contact_info(self):
-    return f"Mobile no is {self.mobile} and Email is {self.email}"
-  
-  def get_detail(self):
-    return self.name, self.get_address(), self.get_contact_info()
-  
-  @classmethod
-  def get_No_of_employee(cls):
-    return cls.no_of_employee
-  
-  @staticmethod
-  def static_method():
-    return ("I am static method")
-  
-  @classmethod
-  def set_increment(cls, inc_val):
-    cls.increment = inc_val
+  def __next__(self):
+    if self.max_value>self.current:
+      self.current += 1
+      return self.current
+    else:
+      raise StopIteration
+    
+obj = MyIterator(5)
+try:
+  print(next(obj))
+  print(obj.__next__())
+  print(obj.__next__())
+  print(obj.__next__())
+  print(obj.__next__())
+  print(obj.__next__())
+except StopIteration:
+  print("Item executed uccesfully")
 
-  def __str__(self):
-    return self.first_name
 
-shiva = Employee("Shiva" ,"Kumar", "001", 888888888, "shivs@gmail.com", 10000, "Bangalore", "Karnataka", "India")
-print(shiva.get_address())
-print(shiva.company_name)
-print(shiva.get_detail())
-print(Employee.get_No_of_employee())
-print(Employee.set_increment(10))
-print(Employee.increment)
-print(Employee.static_method())
+
+
+
+
+
+
+
+
+
+

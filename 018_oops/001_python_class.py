@@ -1,4 +1,13 @@
 """
+4 pillars of OOPS
+=================
+1] Abstraction
+2] Encapsulation
+3] Inheritance
+4] polymerphysm
+"""
+
+"""
 Instance Variable:
 ==============================================================================
 Instance variables are variables that are unique to each instance of a class.
