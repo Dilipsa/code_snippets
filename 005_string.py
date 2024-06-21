@@ -142,3 +142,195 @@ greet = "Good Morning"
 print(("Hello {} {}").format(your_name, greet))
       
 print(f"Hello {your_name} {greet}.")
+
+"""
+1. capitalize()
+  s = "hello"
+  print(s.capitalize())  # Output: "Hello"
+
+2. casefold()
+  s = "Hello"
+  print(s.casefold())  # Output: "hello"
+
+3. center()
+  s = "hello"
+  print(s.center(10))  # Output: "  hello   "
+
+4. count()
+  s = "hello world"
+  print(s.count('o'))  # Output: 2
+
+5. encode()
+  s = "hello"
+  print(s.encode())  # Output: b'hello'
+
+6. endswith()
+  s = "hello"
+  print(s.endswith('lo'))  # Output: True
+
+7. expandtabs()
+  s = "hello\tworld"
+  print(s.expandtabs(4))  # Output: "hello   world"
+
+8. find()
+  s = "hello"
+  print(s.find('e'))  # Output: 1
+
+9. format()
+  s = "Hello, {}"
+  print(s.format("world"))  # Output: "Hello, world"
+
+10. format_map()
+  s = "Hello, {name}"
+  print(s.format_map({"name": "world"}))  # Output: "Hello, world"
+
+11. index()
+  s = "hello"
+  print(s.index('e'))  # Output: 1
+
+12. isalnum()
+  s = "hello123"
+  print(s.isalnum())  # Output: True
+
+13. isalpha()
+  s = "hello"
+  print(s.isalpha())  # Output: True
+
+14. isascii()
+  s = "hello"
+  print(s.isascii())  # Output: True
+
+15. isdecimal()
+  s = "12345"
+  print(s.isdecimal())  # Output: True
+
+16. isdigit()
+  s = "12345"
+  print(s.isdigit())  # Output: True
+
+17. isidentifier()
+  s = "variable_name"
+  print(s.isidentifier())  # Output: True
+
+18. islower()
+  s = "hello"
+  print(s.islower())  # Output: True
+
+19. isnumeric()
+  s = "12345"
+  print(s.isnumeric())  # Output: True
+
+20. isprintable()
+  s = "hello"
+  print(s.isprintable())  # Output: True
+
+21. isspace()
+  s = "   "
+  print(s.isspace())  # Output: True
+
+22. istitle()
+  s = "Hello World"
+  print(s.istitle())  # Output: True
+
+23. isupper()
+  s = "HELLO"
+  print(s.isupper())  # Output: True
+
+24. join()
+  s = "-"
+  print(s.join(["hello", "world"]))  # Output: "hello-world"
+
+25. ljust()
+  s = "hello"
+  print(s.ljust(10))  # Output: "hello     "
+
+26. lower()
+  s = "HELLO"
+  print(s.lower())  # Output: "hello"
+
+27. lstrip()
+  s = "   hello"
+  print(s.lstrip())  # Output: "hello"
+
+28. maketrans()
+  s = "hello"
+  trans = s.maketrans("h", "j")
+  print(s.translate(trans))  # Output: "jello"
+
+29. partition()
+  s = "hello world"
+  print(s.partition(" "))  # Output: ('hello', ' ', 'world')
+
+30. removeprefix()
+  s = "hello world"
+  print(s.removeprefix("hello"))  # Output: " world"
+
+31. removesuffix()
+  s = "hello world"
+  print(s.removesuffix("world"))  # Output: "hello "
+
+32. replace()
+  s = "hello world"
+  print(s.replace("world", "Python"))  # Output: "hello Python"
+
+33. rfind()
+  s = "hello world"
+  print(s.rfind('o'))  # Output: 7
+
+34. rindex()
+  s = "hello world"
+  print(s.rindex('o'))  # Output: 7
+
+35. rjust()
+  s = "hello"
+  print(s.rjust(10))  # Output: "     hello"
+
+36. rpartition()
+  s = "hello world"
+  print(s.rpartition(" "))  # Output: ('hello', ' ', 'world')
+
+37. rsplit()
+  s = "hello world"
+  print(s.rsplit())  # Output: ['hello', 'world']
+
+38. rstrip()
+  s = "hello   "
+  print(s.rstrip())  # Output: "hello"
+
+39. split()
+  s = "hello world"
+  print(s.split())  # Output: ['hello', 'world']
+
+40. splitlines()
+  s = "hello\nworld"
+  print(s.splitlines())  # Output: ['hello', 'world']
+
+41. startswith()
+  s = "hello"
+  print(s.startswith("he"))  # Output: True
+
+42. strip()
+  s = "   hello   "
+  print(s.strip())  # Output: "hello"
+
+43. swapcase()
+  s = "Hello World"
+  print(s.swapcase())  # Output: "hELLO wORLD"
+
+44. title()
+  s = "hello world"
+  print(s.title())  # Output: "Hello World"
+
+45. translate()
+  s = "hello"
+  trans = str.maketrans("h", "j")
+  print(s.translate(trans))  # Output: "jello"
+
+46. upper()
+  s = "hello"
+  print(s.upper())  # Output: "HELLO"
+
+47. zfill()
+  s = "hello"
+  print(s.upper())  # Output: "HELLO"
+"""
