@@ -175,3 +175,78 @@ nested_dict = {"dict_a": my_dict_1,
 print(nested_dict)
   # Output:
   #   {'dict_a': {'name': 'Dilip', 'age': 38}, 'dict_b': {'name': 'Arjun', 'age': 40}}
+
+# dict class builtin methods
+# ===============================================================================
+"""
+1. clear: Removes all elements from the dictionary.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  d.clear()
+  print(d)  # Output: {}
+
+2. copy: Returns a copy of the dictionary.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  dc = d.copy()
+  print(dc)  # Output: {'a': 1, 'b': 2, 'c': 3}
+
+3.fromkeys: Creates a new dictionary with keys from an iterable and values set to a value.
+  keys = ['a', 'b', 'c']
+  d = dict.fromkeys(keys, 0)
+  print(d)  # Output: {'a': 0, 'b': 0, 'c': 0}
+
+4. get: Returns the value for the specified key if the key is in the dictionary.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  value = d.get('b')
+  print(value)  # Output: 2
+
+  # If the key does not exist, it returns None or a default value.
+  value = d.get('d', 'default_value')
+  print(value)  # Output: default_value
+
+5. items: Returns a view object that displays a list of dictionary's key-value tuple pairs.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  items = d.items()
+  print(items)  # Output: dict_items([('a', 1), ('b', 2), ('c', 3)])
+
+6. keys: Returns a view object that displays a list of all the keys in the dictionary.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  keys = d.keys()
+  print(keys)  # Output: dict_keys(['a', 'b', 'c'])
+
+7. pop: Removes the specified key and returns the corresponding value.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  value = d.pop('b')
+  print(value)  # Output: 2
+  print(d)  # Output: {'a': 1, 'c': 3}
+
+  # If the key does not exist, it raises a KeyError or returns a default value if provided.
+  value = d.pop('d', 'default_value')
+  print(value)  # Output: default_value
+
+8. popitem: Removes and returns the last key-value pair as a tuple.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  item = d.popitem()
+  print(item)  # Output: ('c', 3)
+  print(d)  # Output: {'a': 1, 'b': 2}
+
+9. setdefault: Returns the value of the specified key. If the key does not exist, inserts the key with the specified value.
+  d = {'a': 1, 'b': 2}
+  value = d.setdefault('b', 0)
+  print(value)  # Output: 2
+  print(d)  # Output: {'a': 1, 'b': 2}
+
+  # If the key does not exist, it will be added with the default value.
+  value = d.setdefault('c', 3)
+  print(value)  # Output: 3
+  print(d)  # Output: {'a': 1, 'b': 2, 'c': 3}
+
+10. update: Updates the dictionary with the specified key-value pairs.
+  d = {'a': 1, 'b': 2}
+  d.update({'b': 3, 'c': 4})
+  print(d)  # Output: {'a': 1, 'b': 3, 'c': 4}
+
+11. values: Returns a view object that displays a list of all the values in the dictionary.
+  d = {'a': 1, 'b': 2, 'c': 3}
+  values = d.values()
+  print(values)  # Output: dict_values([1, 2, 3])
+"""
